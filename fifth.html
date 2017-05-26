@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Putting It All Together</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="intro.html">Intro</a></li>
+					<li><a href="first.html">Constructing a GET Request</a></li>
+					<li><a href="third.html">Displaying a GET Request</a></li>
+					<li><a href="fourth.html">Using JavaScript</a></li>
+					<li><a href="fifth.html">Tying it All Together</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>Displaying the Results</h1>
+								<p></p>
+							</header>
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Putting it All Together</h3>
+									<p>Now we will look at taking the last GET request from a previous example and render the results in a regular HTML document that any user would be able to read.</p>
+
+									<p>This would be an example of how and end user would access the end point on the API</p>
+
+									<p>In this example, we will use the example of searching for a location located in Sacramento, CA but allow the user to enter a zip code.</p>
+
+									<p>We will create an HTML form that will take in as an argument a zip code.</p>
+
+									<img src="images/form.png" alt="" >
+
+									<p>Below is the code used to generate the HTML form:</p>
+
+
+									<iframe width="100%" height="300" src="https://jsfiddle.net/sushidot/z8ddye9x/1/embedded/html/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+									<p>The most noteworthy portion of this code is here</p>
+
+									<code> input type="text" id="zipField" </code>
+
+									<p>This is a text box which collects the zip code from the user and will append it to the GET request.</p>
+
+									<p>It is treated as a node in the Document Object Model, to be explained further below.</p>
+
+
+									<h3>Adding an Event Listener</h3>
+
+									<p>Now here is where JavaScript comes into play.  On the submit button in the form, we will add an event listener to it which will execute JavaScript to display the information for the Restaurant below it.</p>
+
+									<p>Here is the code for the eventHandler</p>
+
+									<iframe width="100%" height="300" src="https://jsfiddle.net/sushidot/z8ddye9x/1/embedded/js/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+									<p>Lets Explain what is happening below....</p>
+
+									<p>We leverage use of the Document Object Model to capture and display data.  The Document Object Model allows us to model a website much like a data structure.  It makes navigating a website through JavaScript code much like traversing linked list or a binary search tree.</p>
+
+									<p>Additionally, we are going to be using an AJAX GET request.  AJAX stands for Asynchronous JavaScript and XML.</p>
+
+									<p>Its a much more efficient way to use JavaScript to handle GET requests as it handles errors and will timeout if the server does not respond fast enough.  It allows us to process code while we are awaiting a response, rather than wait for a response from the server to continue processing client side code.</p>
+
+									<p>Lets explain the code just a bit further.</p>
+
+
+									<p>This code above essentially maps the HTML to the Document Object Model in order to capture data and reference the HTML tags to manipulate with JavaScript.</p>
+									<img src="images/code1.png" alt="" >
+									<br /><br />
+									<p>The code below accomplishes two tasks:  First, it binds a function to the submit button in the HTML form.  It makes it an event handler and when you enter a zip-code and click"submit", it will pass the text value down the code stream below.</p>
+
+									<p>Second, a callback function is created to handle the state of the GET request.  This is where the efficiency of AJAX comes into play.  This monitors the readystatechange attribute of the XMLHttpRequest, named req in our example.</p>
+									<img src="images/code2.png" alt="" >
+
+									<br /> <br />
+									<p>Next, we check to see if we are good to go to enter our code.  At this point, we got a solid response back from the server via a JSON object and are now able to append information to be displayed in the HTML form. </p>
+
+
+									<img src="images/code3.png" alt="" >
+									<br /><br />
+
+									<p>Now, we capture the JSON request mentioned above so we can further extract properties from the object to display information to the end user.  In our example, we are going to display the Name, Address and Type of a Location from BrewersDB.</p>
+
+									<p>We are capturing the attributes for Name, Address and Type using DOM.  By adding .textContext, it takes the text that is in the JSON attribute and sets it equal to the HTML tags that match the id in getElementById().</p>
+									<img src="images/code4.png" alt="" >
+									<br />
+									<p>This code below handles the event that we do not have a proper response from the server.  It will output to the console what the error is, so a developer can troubleshoot.</p>
+									
+									<img src="images/code5.png" alt="" >
+									<br />
+									<br />
+									<p>The Request then captures the zip code entered and appends it to the url passed to the XMLHtttpRequests open call. This work is passed back up to the beginning of the callback function listed above</p>
+
+									<br />
+									<img src="images/code6.png" alt="" >
+									<br />
+									<br />
+									
+									<br />
+									<p>The final result is shown below.  The user enters a zip-code, in my case, 95815, and it displays a Location, its address and type(brewpub).</p>
+									<img src="images/finalResult.png" alt="" >
+									<br />
+									<br />
+
+									<p>In conclusion, APIs are very extensive and allow a developer a myriad of options to design their project to suite their needs.</p>
+									<p></p>
+
+									<p></p>
+									<p></p>
+
+									<p>Click below to return to home...</p>
+									<a href="index.html" class="button">Continue</a>
+
+								</div>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

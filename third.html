@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Third</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="intro.html">Intro</a></li>
+					<li><a href="first.html">Constructing a GET Request</a></li>
+					<li><a href="third.html">Displaying a GET Request</a></li>
+					<li><a href="fourth.html">Using JavaScript</a></li>
+					<li><a href="fifth.html">Tying it All Together</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>Displaying the Results</h1>
+								<p></p>
+							</header>
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>The Fun Part</h3>
+									<p>Now that we have constructed our first GET request, lets see how to render it.</p>
+
+
+
+									<p>At first glance, you might ask yourself, hey, there is an https in front of this, why not just throw it into my browser and see that outputs?  Should you decide to do so, this is that you shall see:</p>
+
+									<img src="images/raw.jpg" alt="" >
+
+									
+
+									<h3>Try Reading That!</h3>
+
+									<p>What is shown above is what is known as the "raw" JSON response.</p>
+
+									<p>Thankfully, as JSON is exceedingly popular these days, there are several ways to render and preview your response.
+
+									While constructing this How-To-Guide, I had to learn to navigate the BrewersDB.  I used a myriad of utilities to examine GET responses, including raw, rendering them within HTML/DOM model and what I found most useful to preview my responses was a utility called Postman.</p>
+
+									<h3>Using Postman</h3>
+									<p>Luckily, we have a utility we can use to both enter GET requests and render the results in a very user friendly manor.  While there are several available, Postman is a favorite among developers.</p>
+									<img src="images/GET.jpg" alt="" >
+									
+									<p>Its very simple to use.  You merely enter the base URL and the category you are accessing on the API ( in this case, Style ).  Then you add the parameters(styleID and Key).  Hit "Send" and you will get a response ( see below ).</p>
+
+
+
+									<h3>Response using postman</h3>
+									<img src="images/RESPONSE.jpg" alt="" >
+
+									<p>Notice above that you get a return of nearly 345 Beers with the style ID that is "British Origin Ales".  Who would have thought there were that many beers in existence with just one style?!?</p>
+
+									<p>Now, we will execute another GET request that will narrow our search results to a more manageable list. </p>
+
+
+									<h4>Searching for Beers available at certain locations based on user inputted criteria, such as geographical filtering</h4>
+
+									<p>Below is how you would tailor the GET request to return results based on a particular regional area.</p>
+									<img src="images/regional.jpg" alt="" >
+									<p>In this example, I used I picked Sacramento for the locality and California for the region.  Notice that the region is not case sensitive.  This will result in a return of nineteen locations(see below).</p>
+									<img src="images/19.png" alt="" >
+
+
+
+									<h4>Narrowing It To Just One....</h4>
+									<p>Adding just one more parameter in the key, my zip code, will give me a list of the nearest locations to enjoy beer.  Lets see how much smaller this list will get.</p>
+									<img src="images/BJ1.png" alt="" >
+
+									<p>I added one more attribute to the above request, postalCode and set it to 95815 (my zip-code).  Below is the result</p>
+									<img src="images/bj.png" alt="" >
+
+
+									<p>Postman is a great tool for displaying results of API requests.  However, developers use it as a tool to help work with an API.</p>
+
+									<p>In the next section, we will look at how to use JavaScript with the BrewersDB.</p>
+									<p>Click below to continue...</p>
+									<a href="fourth.html" class="button">Continue</a>
+									
+
+								</div>
+								
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

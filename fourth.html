@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Using JavaScript</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="index.html">Urban <span>by TEMPLATED</span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="intro.html">Intro</a></li>
+					<li><a href="first.html">Constructing a GET Request</a></li>
+					<li><a href="third.html">Displaying a GET Request</a></li>
+					<li><a href="fourth.html">Using JavaScript</a></li>
+					<li><a href="fifth.html">Tying it All Together</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper">
+						<div class="inner">
+							<header class="align-center">
+								<h1>Using JavaScript</h1>
+								<p></p>
+							</header>
+							<div class="flex flex-2">
+								<div class="col col2">
+									<h3>Using JavaScript To Construct GET Requests</h3>
+									<p>Utilities like PostMan work great to get up and running learning how to use an API.</p>
+
+									<p>However, developers will want to use APIs to write code in their APP to extract information from an API.</p>
+
+									<p>Below, We will demonstrate integrating an API call using JavaScript</p>
+
+									<h3>First, What is JavaScript</h3>
+
+									<p>There are many ways to describe what JavaScript is.  For simplicity, think of JavaScript as a language that you can use to populate content into a website.  It takes away and automates much of the HTML scripting away and adds ease for programming.</p>
+
+									<p>Below is an example of what a JavaScript GET request looks like.  The example that we will use will display a single beer that is called "10 Day Scottish Ale."</p>
+
+									<iframe width="100%" height="300" src="https://jsfiddle.net/sushidot/7azt87ce/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+									<p>Lets break this down a bit further for your understanding.</p>
+
+									<p>We first create an instance of an XMLHttpRequest.  This allows us to capture data within it and access its functions to the API.</p>
+									<code>var req = new XMLHttpRequest();</code>
+									<br />
+									<br />
+
+									<p>Next we add our key, which you do not want to expose for security reasons to the user.  This is appended to the URL and included in the open call. </p> 
+									<code>var apiKey = 'keepKeyPrivate';</code>
+									<br />
+									<br />
+
+									<p>Then, you send an open call on the XMLHttpRequest to get the JSON.  We include GET to make it a GET request</p>
+									<code>req.open("GET", url + apiKey, false);</code>
+									<br />
+									<br />
+
+									<p>The next line means that we are not sending any additional data along with our GET request</p>
+									<code>req.send(null);</code>
+									<br />
+									<br />
+
+									<p>This line will caputre the GET request and store it as a parsed JSON object.</p>
+									<code>var response = JSON.parse(req.responseText);</code>
+									<br />
+									<br />
+									<p>Lastly, the JSON will be outputted to the console, which we will look at below.</p>
+									<code>console.log(response);</code>
+									<br />
+									<br />
+
+
+									<h3>Resposne From  the JavaScript GET Request</h3>
+									<p>Below is the response you will get from the </p>
+									<img src="images/output1.jpg" alt="" >
+
+									<p>As you can see, You get returned an JSON with one entry, along with a listing of its attributes, such as it's abv, createDate, description, etc.</p>
+
+									<p>What we have done thus far is demonstrate how to use JavaScript to get and parse JSON via a GET request.</p>
+
+									<p>Next, we will demonstrate how to use a form which will display such a GET request to an end user.</p>
+
+									<p>Click below to continue...</p>
+									<a href="fifth.html" class="button">Continue</a>
+
+
+									<p></p>
+
+											
+
+								</div>
+								<div class="col col1 first">
+									<div class="image round fit">
+										<a href="intro.html" class="link"><img src="images/js.jpg" alt="" /></a>
+									</div>
+								</div>
+							</div>
+							<p></p>
+							<p></p>
+						</div>
+					</section>
+
+				
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+					<p>&copy; Untitled. All rights reserved. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.</p>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
